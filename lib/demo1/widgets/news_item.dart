@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:learnflutter/model/news.dart';
+import 'package:learnflutter/demo1/model/news.dart';
 
 enum _Block {
   bg,

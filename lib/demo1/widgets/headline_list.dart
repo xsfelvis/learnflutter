@@ -2,10 +2,10 @@ import 'dart:async';
 
 import 'package:flutter/material.dart';
 import 'package:flutter_webview_plugin/flutter_webview_plugin.dart';
-import 'package:learnflutter/model/news.dart';
-import 'package:learnflutter/request/news_api.dart';
-import 'package:learnflutter/widgets/loading_footer.dart';
-import 'package:learnflutter/widgets/news_item.dart';
+import 'package:learnflutter/demo1/model/news.dart';
+import 'package:learnflutter/demo1/widgets/loading_footer.dart';
+import 'package:learnflutter/demo1/request/news_api.dart';
+import 'package:learnflutter/demo1/widgets/news_item.dart';
 
 class HeadLineList extends StatefulWidget {
   final String _category;
@@ -78,7 +78,7 @@ class _HeadlineListState extends State<HeadLineList>
                                 builder: (context) => WebviewScaffold(
                                       url: '${_articles[index].url}',
                                       appBar:
-                                          AppBar(title: Text("News Detail")),
+                                          AppBar(title: Text("新闻详情")),
                                     )));
                       },
                       news: _articles[index]);

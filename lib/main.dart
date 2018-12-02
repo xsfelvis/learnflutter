@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:learnflutter/view/headline_page.dart';
+import 'package:learnflutter/demo1/view/headline_page.dart';
 
 void main() => runApp(MyApp());
 
@@ -9,8 +9,6 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
         title: "News",
         theme: ThemeData(primarySwatch: Colors.blue),
-        home: HeadLinePage(title: 'Headlines')
-    );
+        home: HeadLinePage(title: '新闻大全'));
   }
 }
-
