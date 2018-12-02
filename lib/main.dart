@@ -1,14 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:learnflutter/demo1/view/headline_page.dart';
+import 'package:learnflutter/demo1/NewsApp.dart';
+import 'package:learnflutter/demo2/Demo2Main.dart';
 
-void main() => runApp(MyApp());
+//void main() => runApp(NewsApp());
+void main() => runApp(Demo2Main());
 
-class MyApp extends StatelessWidget {
-  @override
-  Widget build(BuildContext context) {
-    return MaterialApp(
-        title: "News",
-        theme: ThemeData(primarySwatch: Colors.blue),
-        home: HeadLinePage(title: '新闻大全'));
-  }
-}
+

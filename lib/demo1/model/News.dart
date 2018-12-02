@@ -1,6 +1,6 @@
 import 'package:json_annotation/json_annotation.dart';
 
-part 'news.g.dart';
+part 'News.g.dart';
 
 @JsonSerializable()
 class News extends Object {

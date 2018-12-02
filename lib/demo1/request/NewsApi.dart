@@ -1,7 +1,7 @@
 import 'dart:async';
 import 'dart:convert';
 import 'package:flutter/foundation.dart';
-import 'package:learnflutter/demo1/model/news.dart';
+import 'package:learnflutter/demo1/model/News.dart';
 import 'package:http/http.dart' as http;
 
 const apikey = "56f8f53330664a669852560995ac4972";

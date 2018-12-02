@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:learnflutter/demo1/widgets/headline_list.dart';
+import 'package:learnflutter/demo1/widgets/HeadLineList.dart';
 
 class HeadLinePage extends StatefulWidget {
   final String title;
