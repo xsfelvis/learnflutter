@@ -34,12 +34,12 @@ class WidgetsUtils {
           },
           child: new Stack(
             children: <Widget>[
-              new Image.network(imgUrl),
+              new Image.network(imgUrl,fit:BoxFit.fitWidth),
               new Container(
                   width: screenWidth,
                   color: const Color(0x50000000),
                   child: new Padding(
-                    padding: const EdgeInsets.all(10.0),
+                    padding: const EdgeInsets.all(1.0),
                     child: new Text(title,
                         maxLines: 1,
                         style:
