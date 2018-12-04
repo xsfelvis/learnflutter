@@ -20,6 +20,14 @@ dependencies:
   flutter_webview_plugin: ^0.3.0+2
   http: ^0.12.0
   dio: ^1.0.9
+  shared_preferences: ^0.4.3
+  #demo2
+  flutter_refresh: ^0.0.2
+  banner_view: ^1.1.2
+  fluttertoast: ^2.1.2
+  event_bus: ^1.0.1
+
+
 
 
   # The following adds the Cupertino Icons font to your application.

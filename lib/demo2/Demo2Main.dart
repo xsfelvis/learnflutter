@@ -1,6 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:learnflutter/demo2/ParamsUtils.dart';
+import 'package:learnflutter/demo2/utils/net/ParamsUtils.dart';
 import 'package:learnflutter/demo2/view/DiscoveryPage.dart';
 import 'package:learnflutter/demo2/view/MyInfoPage.dart';
 import 'package:learnflutter/demo2/view/NewsListPage.dart';
