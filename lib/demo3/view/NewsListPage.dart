@@ -48,8 +48,8 @@ class NewsListPageState extends State<NewsListPage> {
   @override
   void initState() {
     super.initState();
-    getNewsList(_mCurPage);
-    getBannerList();
+    _getNewsList(_mCurPage);
+    _getBannerList();
 //    testRequest();
 //    testRequest2();
   }
@@ -63,8 +63,8 @@ class NewsListPageState extends State<NewsListPage> {
       );
     } else {
       return new Refresh(
-        onFooterRefresh: onFooterRefresh,
-        onHeaderRefresh: onHeaderRefresh,
+        onFooterRefresh: _onFooterRefresh,
+        onHeaderRefresh: _onHeaderRefresh,
         childBuilder: (BuildContext context,
             {ScrollController controller, ScrollPhysics physics}) {
           return new Container(
@@ -73,85 +73,21 @@ class NewsListPageState extends State<NewsListPage> {
                   itemCount: listData.length * 2 + 1,
                   controller: controller,
                   physics: physics,
-                  itemBuilder: (context, i) => renderRow(i)));
+                  itemBuilder: (context, i) => _renderRow(i)));
         },
       );
     }
   }
 
-  //  获取Banner数据
-  void getNewsList(int curpage) {
-    var url = Api.BASE_URL +Api.HOME_ARTICLE + curpage.toString() + "/json";
-    HttpCore.instance.get(url, (data) {
-      News news = News.fromJson(data);
-      List<Datas> newsDatas = news.datas;
-      setState(() {
-        listData = newsDatas;
-      });
-    });
 
-//    var url = Api.HOME_ARTICLE + curpage.toString() + "/json";
-//    Http.get(url).then((res) {
-//      try {
-//        Map<String, dynamic> map = jsonDecode(res);
-//        setState(() {
-//          var _listData = map['data']['datas'];
-//          if (curpage == 1) {
-//            listData.clear();
-//            listData.addAll(_listData);
-//          } else {
-//            listData.addAll(_listData);
-//          }
-//        });
-//      } catch (e) {
-//        print('错误 catch s $e');
-//      }
-//    });
-  }
 
-  //获取banner数据
-  Future getBannerList() async {
-//    List<BannerData> bannerdata = await HttpBiz.instance.getBannerItems();
-
-    HttpCore.instance.get(Api.BASE_URL + Api.HOME_BANNER, (data) {
-      List<BannerData> banners = getBannersList(data);
-      setState(() {
-        slideData = banners;
-      });
-    }, errorCallBack: (errorMsg) {
-      print("error:" + errorMsg);
-      return null;
-    });
-  }
-
-  Future<Null> onFooterRefresh() {
-    return new Future.delayed(new Duration(seconds: 2), () {
-      setState(() {
-        _mCurPage++;
-        getNewsList(_mCurPage);
-      });
-    });
-  }
-
-  Future<Null> onHeaderRefresh() {
-    return new Future.delayed(new Duration(seconds: 2), () {
-      setState(() {
-        _mCurPage = 1;
-        getBannerList();
-        getNewsList(_mCurPage);
-      });
-    });
-  }
-
-  Widget renderRow(i) {
+  Widget _renderRow(i) {
     // i为0时渲染轮播图
     if (i == 0) {
       if (slideData != null && slideData.length > 0) {
         return new Container(
           height: 200.0,
-          child: new BannerView(mWidgetUtils.getBannerChild(context, slideData),
-              intervalDuration: const Duration(seconds: 3),
-              animationDuration: const Duration(milliseconds: 500)),
+          child: _bannerView(),
         );
       }
     }
@@ -262,7 +198,98 @@ class NewsListPageState extends State<NewsListPage> {
     );
   }
 
-  void testRequest() {
+  Widget _bannerView (){
+    return new BannerView(_getBannerChild(context, slideData),
+        intervalDuration: const Duration(seconds: 3),
+        animationDuration: const Duration(milliseconds: 500));
+  }
+
+  List<Widget> _getBannerChild(BuildContext context, List<BannerData> slideData) {
+    List<Widget> items = [];
+    if (slideData != null && slideData.length > 0) {
+      for (var i = 0; i < slideData.length; i++) {
+        var item = slideData[i];
+        var imgUrl = item.imagePath;
+        var title = item.title;
+        var detailUrl = item.url;
+        items.add(new GestureDetector(
+          onTap: () {
+            // 详情跳转
+            ToastUtils.showShort("跳转详情页");
+//            Navigator.of(context)
+//                .push(new MaterialPageRoute(builder: (context) {
+//              return new NewsDetailPage(detailUrl, title);
+//            }));
+          },
+          child: new Stack(
+            children: <Widget>[
+              new Image.network(imgUrl,fit:BoxFit.fitWidth),
+              new Container(
+                  width: mWidgetUtils.getScreenWidth(),
+                  color: const Color(0x50000000),
+                  child: new Padding(
+                    padding: const EdgeInsets.all(1.0),
+                    child: new Text(title,
+                        maxLines: 1,
+                        style:
+                        new TextStyle(color: Colors.white, fontSize: 15.0)),
+                  )),
+            ],
+          ),
+        ));
+      }
+      return items;
+    }
+  }
+
+
+  //  获取Banner数据
+  void _getNewsList(int curpage) {
+    var url = Api.BASE_URL +Api.HOME_ARTICLE + curpage.toString() + "/json";
+    HttpCore.instance.get(url, (data) {
+      News news = News.fromJson(data);
+      List<Datas> newsDatas = news.datas;
+      setState(() {
+        listData = newsDatas;
+      });
+    });
+  }
+
+  //获取banner数据
+  Future _getBannerList() async {
+//    List<BannerData> bannerdata = await HttpBiz.instance.getBannerItems();
+
+    HttpCore.instance.get(Api.BASE_URL + Api.HOME_BANNER, (data) {
+      List<BannerData> banners = getBannersList(data);
+      setState(() {
+        slideData = banners;
+      });
+    }, errorCallBack: (errorMsg) {
+      print("error:" + errorMsg);
+      return null;
+    });
+  }
+
+  Future<Null> _onFooterRefresh() {
+    return new Future.delayed(new Duration(seconds: 2), () {
+      setState(() {
+        _mCurPage++;
+        _getNewsList(_mCurPage);
+      });
+    });
+  }
+
+  Future<Null> _onHeaderRefresh() {
+    return new Future.delayed(new Duration(seconds: 2), () {
+      setState(() {
+        _mCurPage = 1;
+        _getBannerList();
+        _getNewsList(_mCurPage);
+      });
+    });
+  }
+
+  void _testRequest() {
     HttpCore.instance.get(Api.BASE_URL + Api.HOME_BANNER, (data) {
       ToastUtils.showShort("" + getBannersList(data)[0].desc);
     }, errorCallBack: (errorMsg) {
@@ -270,7 +297,7 @@ class NewsListPageState extends State<NewsListPage> {
     });
   }
 
-  void testRequest2() {
+  void _testRequest2() {
     HttpCore.instance.get("http://www.mocky.io/v2/5b7143ae3200001402f36c46",
         (data) {
       ToastUtils.showShort("" + UserInfo.fromJson(data).name);
