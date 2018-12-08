@@ -1,19 +1,19 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:learnflutter/demo2/utils/net/ParamsUtils.dart';
-import 'package:learnflutter/demo2/view/DiscoveryPage.dart';
-import 'package:learnflutter/demo2/view/MyInfoPage.dart';
-import 'package:learnflutter/demo2/view/NewsListPage.dart';
-import 'package:learnflutter/demo2/view/SystemPage.dart';
+import 'package:learnflutter/demo3/view/DiscoveryPage.dart';
+import 'package:learnflutter/demo3/view/MyInfoPage.dart';
+import 'package:learnflutter/demo3/view/NewsListPage.dart';
+import 'package:learnflutter/demo3/view/SystemPage.dart';
 
-class Demo2Main extends StatefulWidget {
+class Demo3Main extends StatefulWidget {
+
   @override
   State<StatefulWidget> createState() {
-    return new Demo2MainState();
+    return new Demo3MainState();
   }
 }
 
-class Demo2MainState extends State<Demo2Main> {
+class Demo3MainState extends State<Demo3Main> {
   //磨人索引第一个tab
   int _tabIndex = 0;
 
@@ -40,8 +40,6 @@ class Demo2MainState extends State<Demo2Main> {
     return new Image.asset(path, width: 20.0, height: 20.0);
   }
 
-
-
   @override
   Widget build(BuildContext context) {
     initData();
@@ -67,7 +65,6 @@ class Demo2MainState extends State<Demo2Main> {
   }
 
   void initData() {
-    ParamsUtils.getParams();
     if (tabImages == null) {
       tabImages = [
         [

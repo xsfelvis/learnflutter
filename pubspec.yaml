@@ -68,6 +68,10 @@ flutter:
     - images/ic_nav_discover_actived.png
     - images/ic_nav_my_normal.png
     - images/ic_nav_my_pressed.png
+    - images/author.png
+    - images/ic_is_like.png
+    - images/ic_un_like.png
+
 
 
   # An image asset can refer to one or more resolution-specific "variants", see
