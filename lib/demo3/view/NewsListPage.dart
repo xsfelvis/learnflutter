@@ -1,18 +1,14 @@
 import 'dart:async';
-import 'dart:convert';
 import 'package:flutter/material.dart';
 import 'package:learnflutter/demo3/model/Banners.dart';
 import 'package:learnflutter/demo3/model/News.dart';
 import 'package:learnflutter/demo3/model/UserInfoTest.dart';
 import 'package:learnflutter/demo3/utils/WidgetsUtils.dart';
 import 'package:learnflutter/demo3/utils/net/Api.dart';
-import 'package:learnflutter/demo3/utils/net/Http.dart';
 import 'package:flutter_refresh/flutter_refresh.dart';
 import 'package:banner_view/banner_view.dart';
-import 'package:learnflutter/demo3/utils/net/HttpBiz.dart';
 import 'package:learnflutter/demo3/utils/net/HttpCore.dart';
 import 'package:learnflutter/demo3/utils/toast/ToastUtil.dart';
-import 'package:learnflutter/demo3/model/Banners.dart';
 
 class NewsListPage extends StatefulWidget {
   @override
