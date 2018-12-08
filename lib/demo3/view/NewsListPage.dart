@@ -237,7 +237,7 @@ class NewsListPageState extends State<NewsListPage> {
     }
   }
 
-  //  获取Banner数据
+  //  获取News数据
   void _getNewsList(int curpage) {
     var url = Api.HOME_ARTICLE + curpage.toString() + "/json";
     HttpCore.instance.get(url, (data) {
