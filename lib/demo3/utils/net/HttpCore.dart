@@ -52,10 +52,6 @@ class HttpCore {
 //    dio.onHttpClientCreate = (HttpClient client) {
 //      client.findProxy = (uri) {
 //        //proxy all request to localhost:8888
-////        return 'PROXY ' +
-////            '${DebugConfig.proxyIp}' +
-////            ':' +
-////            '${DebugConfig.proxyPrort}';
 //        return "PROXY 172.23.235.153:8888";
 //      };
 //    };
