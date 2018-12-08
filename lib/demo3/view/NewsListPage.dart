@@ -2,6 +2,7 @@ import 'dart:async';
 import 'dart:convert';
 import 'package:flutter/material.dart';
 import 'package:learnflutter/demo3/model/Banners.dart';
+import 'package:learnflutter/demo3/model/News.dart';
 import 'package:learnflutter/demo3/model/UserInfoTest.dart';
 import 'package:learnflutter/demo3/utils/WidgetsUtils.dart';
 import 'package:learnflutter/demo3/utils/net/Api.dart';
@@ -13,7 +14,6 @@ import 'package:learnflutter/demo3/utils/net/HttpCore.dart';
 import 'package:learnflutter/demo3/utils/toast/ToastUtil.dart';
 import 'package:learnflutter/demo3/model/Banners.dart';
 
-
 class NewsListPage extends StatefulWidget {
   @override
   NewsListPageState createState() => new NewsListPageState();
@@ -21,10 +21,10 @@ class NewsListPage extends StatefulWidget {
 
 class NewsListPageState extends State<NewsListPage> {
   //轮播图的数据
-  var slideData = [];
+  List<BannerData> slideData = [];
 
   //列表的数据
-  var listData = [];
+  List<Datas> listData = [];
 
   //总数
   var listTotalSize;
@@ -81,23 +81,32 @@ class NewsListPageState extends State<NewsListPage> {
 
   //  获取Banner数据
   void getNewsList(int curpage) {
-    var url = Api.HOME_ARTICLE + curpage.toString() + "/json";
-    Http.get(url).then((res) {
-      try {
-        Map<String, dynamic> map = jsonDecode(res);
-        setState(() {
-          var _listData = map['data']['datas'];
-          if (curpage == 1) {
-            listData.clear();
-            listData.addAll(_listData);
-          } else {
-            listData.addAll(_listData);
-          }
-        });
-      } catch (e) {
-        print('错误 catch s $e');
-      }
+    var url = Api.BASE_URL +Api.HOME_ARTICLE + curpage.toString() + "/json";
+    HttpCore.instance.get(url, (data) {
+      News news = News.fromJson(data);
+      List<Datas> newsDatas = news.datas;
+      setState(() {
+        listData = newsDatas;
+      });
     });
+
+//    var url = Api.HOME_ARTICLE + curpage.toString() + "/json";
+//    Http.get(url).then((res) {
+//      try {
+//        Map<String, dynamic> map = jsonDecode(res);
+//        setState(() {
+//          var _listData = map['data']['datas'];
+//          if (curpage == 1) {
+//            listData.clear();
+//            listData.addAll(_listData);
+//          } else {
+//            listData.addAll(_listData);
+//          }
+//        });
+//      } catch (e) {
+//        print('错误 catch s $e');
+//      }
+//    });
   }
 
   //获取banner数据
@@ -105,9 +114,7 @@ class NewsListPageState extends State<NewsListPage> {
 //    List<BannerData> bannerdata = await HttpBiz.instance.getBannerItems();
 
     HttpCore.instance.get(Api.BASE_URL + Api.HOME_BANNER, (data) {
-//      ToastUtils.showShort("" + getBannersList(data)[0].desc);
       List<BannerData> banners = getBannersList(data);
-
       setState(() {
         slideData = banners;
       });
@@ -116,20 +123,6 @@ class NewsListPageState extends State<NewsListPage> {
       return null;
     });
   }
-
-
-//    var url = Api.HOME_BANNER;
-//    Http.get(url).then((res) {
-//      try {
-//        Map<String, dynamic> map = json.decode(res);
-//        //更新状态
-//        setState(() {
-//          slideData = map['data'];
-//        });
-//      } catch (e) {
-//        print('错误catch s $e');
-//      }
-//    });
 
   Future<Null> onFooterRefresh() {
     return new Future.delayed(new Duration(seconds: 2), () {
@@ -178,7 +171,7 @@ class NewsListPageState extends State<NewsListPage> {
       children: <Widget>[
         // 标题充满一整行，所以用Expanded组件包裹
         new Expanded(
-          child: new Text(itemData['title'], style: titleTextStyle),
+          child: new Text(itemData.title, style: titleTextStyle),
         )
       ],
     );
@@ -187,7 +180,7 @@ class NewsListPageState extends State<NewsListPage> {
       children: <Widget>[
         new Container(
           child: new Text(
-            itemData['superChapterName'],
+            itemData.superChapterName,
             style: subtitleStyle,
           ),
         ),
@@ -195,7 +188,7 @@ class NewsListPageState extends State<NewsListPage> {
         new Padding(
           padding: const EdgeInsets.fromLTRB(4.0, 0.0, 0.0, 0.0),
           child: new Text(
-            itemData['niceDate'],
+            itemData.niceDate,
             style: subtitleStyle,
           ),
         ),
@@ -206,11 +199,11 @@ class NewsListPageState extends State<NewsListPage> {
             // 为了让评论数显示在最右侧，所以需要外面的Expanded和这里的MainAxisAlignment.end
             mainAxisAlignment: MainAxisAlignment.end,
             children: <Widget>[
-              new Text("${itemData['zan']}", style: subtitleStyle),
+              new Text("${itemData.zan}", style: subtitleStyle),
               new Padding(
                 padding: new EdgeInsets.fromLTRB(4.0, 0.0, 0.0, 0.0),
                 child: new Image.asset(
-                    itemData['collect']
+                    itemData.collect
                         ? './images/ic_is_like.png'
                         : './images/ic_un_like.png',
                     width: 16.0,
@@ -239,7 +232,7 @@ class NewsListPageState extends State<NewsListPage> {
                       margin: new EdgeInsets.fromLTRB(0.0, 0.0, 2.0, 0.0),
                     ),
                     new Text(
-                      '${itemData['author']}',
+                      '${itemData.author}',
                       style: authorStyle,
                     )
                   ],
