@@ -75,8 +75,6 @@ class NewsListPageState extends State<NewsListPage> {
     }
   }
 
-
-
   Widget _renderRow(i) {
     // i为0时渲染轮播图
     if (i == 0) {
@@ -194,13 +192,14 @@ class NewsListPageState extends State<NewsListPage> {
     );
   }
 
-  Widget _bannerView (){
+  Widget _bannerView() {
     return new BannerView(_getBannerChild(context, slideData),
         intervalDuration: const Duration(seconds: 3),
         animationDuration: const Duration(milliseconds: 500));
   }
 
-  List<Widget> _getBannerChild(BuildContext context, List<BannerData> slideData) {
+  List<Widget> _getBannerChild(
+      BuildContext context, List<BannerData> slideData) {
     List<Widget> items = [];
     if (slideData != null && slideData.length > 0) {
       for (var i = 0; i < slideData.length; i++) {
@@ -219,7 +218,7 @@ class NewsListPageState extends State<NewsListPage> {
           },
           child: new Stack(
             children: <Widget>[
-              new Image.network(imgUrl,fit:BoxFit.fitWidth),
+              new Image.network(imgUrl, fit: BoxFit.fitWidth),
               new Container(
                   width: mWidgetUtils.getScreenWidth(),
                   color: const Color(0x50000000),
@@ -228,7 +227,7 @@ class NewsListPageState extends State<NewsListPage> {
                     child: new Text(title,
                         maxLines: 1,
                         style:
-                        new TextStyle(color: Colors.white, fontSize: 15.0)),
+                            new TextStyle(color: Colors.white, fontSize: 15.0)),
                   )),
             ],
           ),
@@ -238,10 +237,9 @@ class NewsListPageState extends State<NewsListPage> {
     }
   }
 
-
   //  获取Banner数据
   void _getNewsList(int curpage) {
-    var url = Api.BASE_URL +Api.HOME_ARTICLE + curpage.toString() + "/json";
+    var url = Api.HOME_ARTICLE + curpage.toString() + "/json";
     HttpCore.instance.get(url, (data) {
       News news = News.fromJson(data);
       List<Datas> newsDatas = news.datas;
@@ -255,7 +253,7 @@ class NewsListPageState extends State<NewsListPage> {
   Future _getBannerList() async {
 //    List<BannerData> bannerdata = await HttpBiz.instance.getBannerItems();
 
-    HttpCore.instance.get(Api.BASE_URL + Api.HOME_BANNER, (data) {
+    HttpCore.instance.get(Api.HOME_BANNER, (data) {
       List<BannerData> banners = getBannersList(data);
       setState(() {
         slideData = banners;

@@ -24,7 +24,7 @@ class HttpCore {
   static const String POST = "post";
 
   var dio = new Dio(new Options(
-//      baseUrl: Api.BASE_URL,
+      baseUrl: Api.BASE_URL,
       connectTimeout: 5000,
       receiveTimeout: 10000,
       headers: {"user-agent": "dio", "api": "1.0.0"},
