@@ -4,12 +4,12 @@ import 'package:flutter/material.dart';
 
 //------------------------ ParentWidget --------------------------------
 
-class ParentWidget extends StatefulWidget {
+class ParentStateMangeWidget extends StatefulWidget {
   @override
-  _ParentWidgetState createState() => new _ParentWidgetState();
+  _ParentStateMangeWidgetState createState() => new _ParentStateMangeWidgetState();
 }
 
-class _ParentWidgetState extends State<ParentWidget> {
+class _ParentStateMangeWidgetState extends State<ParentStateMangeWidget> {
   bool _active = false;
 
   void _handleTapboxChanged(bool newValue) {
