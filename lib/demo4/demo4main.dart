@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:learnflutter/demo4/hybridstatemanager.dart';
 import 'package:learnflutter/demo4/new_router.dart';
 import 'package:learnflutter/demo4/parentmanagerstate.dart';
 
@@ -49,11 +50,12 @@ class _MyHomePageState extends State<MyHomePage> {
             Text(
               'You have pushed the button this many times:',
             ),
+            ParentStateMangeWidget(),
             Text(
               '$_counter',
               style: Theme.of(context).textTheme.display1,
             ),
-            ParentWidget(),
+            HybridStateManage(),
             FlatButton(
               child: Text("open new "),
               textColor: Colors.blue,
