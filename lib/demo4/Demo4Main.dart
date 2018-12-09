@@ -9,6 +9,10 @@ class Demo4Main extends StatelessWidget {
       theme: new ThemeData(
         primarySwatch: Colors.blue,
       ),
+      //注册路由表
+      routes: {
+        "new_page": (context) => NewRoute(),
+      },
       home: new MyHomePage(title: 'Flutter Demo Home Page'),
     );
   }
@@ -46,16 +50,20 @@ class _MyHomePageState extends State<MyHomePage> {
             ),
             Text(
               '$_counter',
-              style: Theme.of(context).textTheme.display1,
+              style: Theme
+                  .of(context)
+                  .textTheme
+                  .display1,
             ),
             FlatButton(
               child: Text("open new "),
               textColor: Colors.blue,
-              onPressed: (){
-                Navigator.push(context, MaterialPageRoute(
-                    builder: (context){
-                      return new NewRoute();
-                }));
+              onPressed: () {
+                Navigator.pushNamed(context, "new_page");
+//                Navigator.push(context, MaterialPageRoute(
+//                    builder: (context) {
+//                      return new NewRoute();
+//                    }));
               },
 
             ),
