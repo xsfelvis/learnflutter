@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:learnflutter/demo4/new_router.dart';
+import 'package:learnflutter/demo4/parentmanagerstate.dart';
 
 class Demo4Main extends StatelessWidget {
   @override
@@ -50,11 +51,9 @@ class _MyHomePageState extends State<MyHomePage> {
             ),
             Text(
               '$_counter',
-              style: Theme
-                  .of(context)
-                  .textTheme
-                  .display1,
+              style: Theme.of(context).textTheme.display1,
             ),
+            ParentWidget(),
             FlatButton(
               child: Text("open new "),
               textColor: Colors.blue,
@@ -65,7 +64,6 @@ class _MyHomePageState extends State<MyHomePage> {
 //                      return new NewRoute();
 //                    }));
               },
-
             ),
           ],
         ),
