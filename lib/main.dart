@@ -6,7 +6,8 @@ import 'package:learnflutter/demo4/demo4main.dart';
 import 'package:learnflutter/demo5/battery_plugin.dart';
 
 void main() {
-  //void main() => runApp(NewsApp());
+//  void main() => runApp(NewsApp());
 //  runApp(Demo3Main());
-  runApp(BatteryLevelMain());
+//  runApp(BatteryLevelMain());
+  runApp(Demo4Main());
 }

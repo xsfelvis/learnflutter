@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:learnflutter/demo4/echo_router.dart';
 import 'package:learnflutter/demo4/hybridstatemanager.dart';
 import 'package:learnflutter/demo4/new_router.dart';
 import 'package:learnflutter/demo4/parentmanagerstate.dart';
@@ -13,7 +14,7 @@ class Demo4Main extends StatelessWidget {
       ),
       //注册路由表
       routes: {
-        "new_page": (context) => NewRoute(),
+        "router/static_page": (context) => StaticRoute(),
       },
       home: new MyHomePage(title: 'Flutter Demo Home Page'),
     );
@@ -47,26 +48,41 @@ class _MyHomePageState extends State<MyHomePage> {
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: <Widget>[
-            Text(
-              'You have pushed the button this many times:',
-            ),
-            ParentStateMangeWidget(),
-            Text(
-              '$_counter',
-              style: Theme.of(context).textTheme.display1,
-            ),
-            HybridStateManage(),
+//            Text(
+//              'You have pushed the button this many times:',
+//            ),
+//            ParentStateMangeWidget(),
+//            Text(
+//              '$_counter',
+//              style: Theme.of(context).textTheme.display1,
+//            ),
+//            HybridStateManage(),
             FlatButton(
-              child: Text("open new "),
+              child: Text("open static router"),
               textColor: Colors.blue,
               onPressed: () {
-                Navigator.pushNamed(context, "new_page");
-//                Navigator.push(context, MaterialPageRoute(
-//                    builder: (context) {
-//                      return new NewRoute();
-//                    }));
+                Navigator.pushNamed(context, "router/static_page");
+//                Navigator.of(context).pushNamed("router/static_page");
               },
             ),
+            FlatButton(
+              child: Text("open dynamic router"),
+              textColor: Colors.blue,
+              onPressed: () {
+                Future future = Navigator.push(context,
+                    MaterialPageRoute(builder: (context) {
+                  return new EchoRoute("传入跳转参数");
+                }));
+                //接收动态页面返回时传回的值
+                future.then((value) {
+                  showDialog(
+                      context: context,
+                      child: new AlertDialog(
+                        title: new Text(value),
+                      ));
+                });
+              },
+            )
           ],
         ),
       ),
