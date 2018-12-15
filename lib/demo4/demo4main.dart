@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:learnflutter/demo4/echo_router.dart';
+import 'package:learnflutter/demo4/dynamic_router.dart';
 import 'package:learnflutter/demo4/hybridstatemanager.dart';
-import 'package:learnflutter/demo4/new_router.dart';
+import 'package:learnflutter/demo4/static_router.dart';
 import 'package:learnflutter/demo4/parentmanagerstate.dart';
 
 class Demo4Main extends StatelessWidget {
@@ -71,7 +71,7 @@ class _MyHomePageState extends State<MyHomePage> {
               onPressed: () {
                 Future future = Navigator.push(context,
                     MaterialPageRoute(builder: (context) {
-                  return new EchoRoute("传入跳转参数");
+                  return new DynamicRoute("传入跳转参数");
                 }));
                 //接收动态页面返回时传回的值
                 future.then((value) {

@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 //接收参数的路由
-class EchoRoute extends StatelessWidget {
-  EchoRoute(this.tip);
+class DynamicRoute extends StatelessWidget {
+  DynamicRoute(this.tip);
   final String tip;
   @override
   Widget build(BuildContext context) {
