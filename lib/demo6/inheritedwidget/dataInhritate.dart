@@ -1,5 +1,5 @@
 import 'package:flutter/widgets.dart';
-import 'package:learnflutter/demo6/datamodel.dart';
+import 'package:learnflutter/demo6/inheritedwidget/datamodel.dart';
 
 class InheritedContext extends InheritedWidget {
 

@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:learnflutter/demo6/dataInhritate.dart';
-import 'package:learnflutter/demo6/datamodel.dart';
-import 'package:learnflutter/demo6/funcationwidgets.dart';
+import 'package:learnflutter/demo6/inheritedwidget/dataInhritate.dart';
+import 'package:learnflutter/demo6/inheritedwidget/datamodel.dart';
+import 'package:learnflutter/demo6/inheritedwidget/funcationwidgets.dart';
 
 class InheritedWidgetTestContainer extends StatefulWidget {
   @override

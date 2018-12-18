@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:learnflutter/demo6/dataInhritate.dart';
+import 'package:learnflutter/demo6/inheritedwidget/dataInhritate.dart';
 
 class CustomerWidgetA extends StatelessWidget {
   @override

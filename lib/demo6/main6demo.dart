@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:learnflutter/demo6/inhritagecontainer.dart';
-import 'package:learnflutter/demo6/test/inheritdata.dart';
-import 'package:learnflutter/demo6/test/nestchild.dart';
+import 'package:learnflutter/demo6/inheritedwidget/inhritagecontainer.dart';
+import 'package:learnflutter/demo6/notification/notificationroute.dart';
+
 
 class Main6Demo extends StatelessWidget {
   @override
@@ -19,6 +19,7 @@ class HomePage extends StatelessWidget {
   Widget build(BuildContext context) {
     return   Container(
 //        child: MyWelcomeInfo(welcomeInfo: 'hello flutter', child: MyNestedChild()));
-    child: InheritedWidgetTestContainer());
+//    child: InheritedWidgetTestContainer());
+    child: NotificationStudy());
   }
 }
