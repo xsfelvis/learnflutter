@@ -4,16 +4,17 @@ import 'package:learnflutter/demo3/view/DiscoveryPage.dart';
 import 'package:learnflutter/demo3/view/MyInfoPage.dart';
 import 'package:learnflutter/demo3/view/NewsListPage.dart';
 import 'package:learnflutter/demo3/view/SystemPage.dart';
+import 'package:learnflutter/drawer_page.dart';
+import 'package:learnflutter/demo4/route_study.dart';
 
-class Demo3Main extends StatefulWidget {
-
+class DioStudy extends StatefulWidget {
   @override
   State<StatefulWidget> createState() {
-    return new Demo3MainState();
+    return new DioStudyState();
   }
 }
 
-class Demo3MainState extends State<Demo3Main> {
+class DioStudyState extends State<DioStudy> {
   //磨人索引第一个tab
   int _tabIndex = 0;
 
@@ -21,7 +22,7 @@ class Demo3MainState extends State<Demo3Main> {
   final tabTextStyleNormal = new TextStyle(color: const Color(0xff969696));
 
   // 选中情况的字体样式
-  final tabTextStyleSelect = new TextStyle(color: const Color(0xff63ca6c));
+  final tabTextStyleSelect = new TextStyle(color: Colors.blue);
 
   //底部菜单栏图标数组
   var tabImages;
@@ -32,9 +33,6 @@ class Demo3MainState extends State<Demo3Main> {
   //菜单文案
   var tabTitles = ['文章', '体系', '发现', '我的'];
 
-  //路由map
-  Map<String, WidgetBuilder> _routes = new Map();
-
   // 生成image组件
   Image getTabImage(path) {
     return new Image.asset(path, width: 20.0, height: 20.0);
@@ -44,10 +42,7 @@ class Demo3MainState extends State<Demo3Main> {
   Widget build(BuildContext context) {
     initData();
 
-    return new MaterialApp(
-      theme: new ThemeData(primaryColor: const Color(0xFF63CA6C)),
-      routes: _routes,
-      home: new Scaffold(
+    return  new Scaffold(
         appBar: new AppBar(
             title: new Text(tabTitles[_tabIndex],
                 style: new TextStyle(color: Colors.white)),
@@ -60,7 +55,6 @@ class Demo3MainState extends State<Demo3Main> {
             setState(() => _tabIndex = index);
           },
         ),
-      ),
     );
   }
 

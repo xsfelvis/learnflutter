@@ -2,19 +2,15 @@ import 'package:flutter/material.dart';
 import 'package:learnflutter/demo4/dynamic_router.dart';
 import 'package:learnflutter/demo4/static_router.dart';
 
-class Demo4Main extends StatelessWidget {
+class RouterStudy extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    return new MaterialApp(
-      title: 'Flutter Demo',
-      theme: new ThemeData(
-        primarySwatch: Colors.blue,
+    return new Scaffold(
+      appBar: new AppBar(
+        title: new Text('Flutter Demo Home Page'),
+        centerTitle: true,
       ),
-      //注册路由表
-      routes: {
-        "router/static_page": (context) => StaticRoute(),
-      },
-      home: new MyHomePage(title: 'Flutter Demo Home Page'),
+      body: new MyHomePage(),
     );
   }
 }
@@ -39,9 +35,6 @@ class _MyHomePageState extends State<MyHomePage> {
   @override
   Widget build(BuildContext context) {
     return new Scaffold(
-      appBar: new AppBar(
-        title: new Text(widget.title),
-      ),
       body: Center(
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
@@ -59,7 +52,7 @@ class _MyHomePageState extends State<MyHomePage> {
               child: Text("open static router"),
               textColor: Colors.blue,
               onPressed: () {
-                Navigator.pushNamed(context, "router/static_page");
+                Navigator.pushNamed(context, "RoutePage/static_page");
 //                Navigator.of(context).pushNamed("router/static_page");
               },
             ),
