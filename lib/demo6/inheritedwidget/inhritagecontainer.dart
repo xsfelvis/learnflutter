@@ -44,7 +44,7 @@ class _InheritedWidgetTestContainerState
         reduce: _reduceCount,
         child: new Scaffold(
           appBar: new AppBar(
-            title: new Text('InheritedWidgetTest'),
+            title: new Text('InheritedWidget Msg Dispatch'),
           ),
           body: new Column(
             children: <Widget>[

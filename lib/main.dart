@@ -1,12 +1,10 @@
 import 'package:flutter/material.dart';
-import 'package:learnflutter/demo2/DebugConfig.dart';
-import 'package:learnflutter/demo2/Demo2Main.dart';
 import 'package:learnflutter/demo3/dio_parse_net.dart';
 import 'package:learnflutter/demo4/route_study.dart';
 import 'package:learnflutter/demo4/static_router.dart';
-import 'package:learnflutter/demo5/battery_plugin.dart';
 import 'package:learnflutter/demo6/inheritedwidget/inhritagecontainer.dart';
 import 'package:learnflutter/demo6/msgdispatch.dart';
+import 'package:learnflutter/demo6/notification/notification_msg_dispatch.dart';
 import 'package:learnflutter/drawer_page.dart';
 
 void main() {
@@ -19,11 +17,12 @@ void main() {
 //    theme: kAndroidTheme,
     routes: <String, WidgetBuilder>{
       '/RoutePage': (BuildContext context) => new RouterStudy(),
-      "RoutePage/static_page": (context) => StaticRoute(),
+      "RoutePage/Static_Route_Page": (context) => StaticRoute(),
       '/DioStudyPage': (BuildContext context) => new DioStudy(),
-      '/NotificationDisPatchMsgPage': (BuildContext context) =>
-          new NotificationDispatchMsg(),
-      '/InhritedWidgetDisPatchMsgPage': (BuildContext context) =>
+      '/MsgPatchMsgPage': (BuildContext context) => new MsgDispatchMsg(),
+      'MsgPatchMsgPage/NotificationDisPatchMsgPage': (BuildContext context) =>
+          new NotificationMsgDispatchMsg(),
+      'MsgPatchMsgPage/InhritedWidgetDisPatchMsgPage': (BuildContext context) =>
           new InheritedWidgetTestContainer(),
     },
     home: new Scaffold(

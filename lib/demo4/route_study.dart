@@ -52,7 +52,7 @@ class _MyHomePageState extends State<MyHomePage> {
               child: Text("open static router"),
               textColor: Colors.blue,
               onPressed: () {
-                Navigator.pushNamed(context, "RoutePage/static_page");
+                Navigator.pushNamed(context, "RoutePage/Static_Route_Page");
 //                Navigator.of(context).pushNamed("router/static_page");
               },
             ),

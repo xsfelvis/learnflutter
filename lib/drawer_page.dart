@@ -41,19 +41,11 @@ class _DrawerWeigetState extends State<DrawerWeiget> {
             }),
         new Divider(),
         new ListTile(
-            title: new Text('Notifivation 自下向上传递消息传递'),
+            title: new Text('Flutter的传递消息传递'),
             trailing: new Icon(Icons.arrow_right),
             onTap: () {
               Navigator.of(context).pop();
-              Navigator.pushNamed(context, '/NotificationDisPatchMsgPage');
-            }),
-        new Divider(),
-        new ListTile(
-            title: new Text('InhritedWidget 自上向下传递消息传递'),
-            trailing: new Icon(Icons.arrow_right),
-            onTap: () {
-              Navigator.of(context).pop();
-              Navigator.pushNamed(context, '/InhritedWidgetDisPatchMsgPage');
+              Navigator.pushNamed(context, '/MsgPatchMsgPage');
             }),
         new Divider(),
       ],
