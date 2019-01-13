@@ -72,6 +72,10 @@ flutter:
     - images/ic_is_like.png
     - images/ic_un_like.png
     - images/ic_avator.png
+    - images/wy_300x200.jpg
+    - images/wy_200x300.jpg
+    - images/compass.png
+    - images/icon_gql.jpg
 
 
 
