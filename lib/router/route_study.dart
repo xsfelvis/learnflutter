@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:learnflutter/demo4/dynamic_router.dart';
-import 'package:learnflutter/demo4/static_router.dart';
+import 'package:learnflutter/router/dynamic_router.dart';
+import 'package:learnflutter/router/static_router.dart';
 
 class RouterStudy extends StatelessWidget {
   @override

@@ -2,10 +2,10 @@ import 'dart:async';
 
 import 'package:flutter/material.dart';
 import 'package:flutter_webview_plugin/flutter_webview_plugin.dart';
-import 'package:learnflutter/demo1/model/News.dart';
-import 'package:learnflutter/demo1/widgets/LoadingFooter.dart';
-import 'package:learnflutter/demo1/request/NewsApi.dart';
-import 'package:learnflutter/demo1/widgets/NewsItem.dart';
+import 'package:learnflutter/news/model/News.dart';
+import 'package:learnflutter/news/widgets/LoadingFooter.dart';
+import 'package:learnflutter/news/request/NewsApi.dart';
+import 'package:learnflutter/news/widgets/NewsItem.dart';
 
 class HeadLineList extends StatefulWidget {
   final String _category;

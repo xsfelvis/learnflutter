@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:learnflutter/demo1/view/HeadLinePage.dart';
+import 'package:learnflutter/news/view/HeadLinePage.dart';
 
 class NewsApp extends StatelessWidget {
   @override

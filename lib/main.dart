@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:learnflutter/demo3/dio_parse_net.dart';
-import 'package:learnflutter/demo4/route_study.dart';
-import 'package:learnflutter/demo4/static_router.dart';
+import 'package:learnflutter/router/route_study.dart';
+import 'package:learnflutter/router/static_router.dart';
 import 'package:learnflutter/msgdispatch/inheritedwidget/inhritagecontainer.dart';
 import 'package:learnflutter/msgdispatch/msgdispatch.dart';
 import 'package:learnflutter/msgdispatch/notification/notification_msg_dispatch.dart';

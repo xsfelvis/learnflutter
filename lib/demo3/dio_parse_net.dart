@@ -5,7 +5,7 @@ import 'package:learnflutter/demo3/view/MyInfoPage.dart';
 import 'package:learnflutter/demo3/view/NewsListPage.dart';
 import 'package:learnflutter/demo3/view/SystemPage.dart';
 import 'package:learnflutter/drawer_page.dart';
-import 'package:learnflutter/demo4/route_study.dart';
+import 'package:learnflutter/router/route_study.dart';
 
 class DioStudy extends StatefulWidget {
   @override
