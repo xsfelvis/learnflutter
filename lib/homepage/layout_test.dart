@@ -113,13 +113,13 @@ var center3 = Column(
     Row(
       children: <Widget>[
         Icon(Icons.keyboard, size: 15),
-        pd(
-            Text(
-              "路漫漫其修远兮,吾将上下而求索",
-              maxLines: 1,
-              overflow: TextOverflow.ellipsis,
-            ),
-            l: 1)
+        Expanded(
+          child: Text(
+            "路漫漫其修远兮,吾将上下而求索",
+            maxLines: 1,
+            overflow: TextOverflow.ellipsis,
+          ),
+        ),
       ],
     ),
   ],

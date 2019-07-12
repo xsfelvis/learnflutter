@@ -26,6 +26,8 @@ dependencies:
   banner_view: ^1.1.2
   fluttertoast: ^2.1.2
   event_bus: ^1.0.1
+  flutter_localizations:
+    sdk: flutter
 
 
 

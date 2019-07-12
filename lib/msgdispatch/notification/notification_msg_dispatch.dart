@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:learnflutter/demo6/notification/notificationroute.dart';
+import 'package:learnflutter/msgdispatch//notification/notificationroute.dart';
 
 class NotificationMsgDispatchMsg extends StatelessWidget {
   @override

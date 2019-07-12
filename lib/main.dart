@@ -2,42 +2,15 @@ import 'package:flutter/material.dart';
 import 'package:learnflutter/demo3/dio_parse_net.dart';
 import 'package:learnflutter/demo4/route_study.dart';
 import 'package:learnflutter/demo4/static_router.dart';
-import 'package:learnflutter/demo6/inheritedwidget/inhritagecontainer.dart';
-import 'package:learnflutter/demo6/msgdispatch.dart';
-import 'package:learnflutter/demo6/notification/notification_msg_dispatch.dart';
-import 'package:learnflutter/demo7/homepageres.dart';
-import 'package:learnflutter/demo7/layout_test.dart';
+import 'package:learnflutter/msgdispatch/inheritedwidget/inhritagecontainer.dart';
+import 'package:learnflutter/msgdispatch/msgdispatch.dart';
+import 'package:learnflutter/msgdispatch/notification/notification_msg_dispatch.dart';
+import 'package:learnflutter/homepage/homepageres.dart';
+import 'generated/i18n.dart';
+import 'package:flutter_localizations/flutter_localizations.dart';
 
-//void main() {
-////  debugPaintSizeEnabled = true;      //打开视觉调试开关
-//
-//  runApp(new MaterialApp(
-////    theme: defaultTargetPlatform == TargetPlatform.iOS
-////        ? kiOSTheme
-////        : kAndroidTheme,
-////    theme: kAndroidTheme,
-//    routes: <String, WidgetBuilder>{
-//      '/RoutePage': (BuildContext context) => new RouterStudy(),
-//      "RoutePage/Static_Route_Page": (context) => StaticRoute(),
-//      '/DioStudyPage': (BuildContext context) => new DioStudy(),
-//      '/MsgPatchMsgPage': (BuildContext context) => new MsgDispatchMsg(),
-//      'MsgPatchMsgPage/NotificationDisPatchMsgPage': (BuildContext context) =>
-//      new NotificationMsgDispatchMsg(),
-//      'MsgPatchMsgPage/InhritedWidgetDisPatchMsgPage': (BuildContext context) =>
-//      new InheritedWidgetTestContainer(),
-//    },
-//    home: new Scaffold(
-//      appBar: new AppBar(
-//          title: new Text("Flutter Study",
-//              style: new TextStyle(color: Colors.white)),
-//          iconTheme: new IconThemeData(color: Colors.white)),
-//      body: Center(
-//        child: Text("点击侧栏"),
-//      ),
-//      drawer:,
-//    ),
-//  ));
-//}
+import 'homepage/layout_test.dart';
+
 void main() => runApp(MyApp());
 
 class MyApp extends StatelessWidget {
@@ -48,7 +21,8 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     var scaffold = Scaffold(
       appBar: AppBar(
-          title: Text("homepageUI"),
+//          title: Text("Flutter实验中心"),
+          title: Text("Flutter实验中心"),
           bottom: tabBar,
           backgroundColor: Color(0xff54C5F8),
           centerTitle: true,
@@ -72,7 +46,17 @@ class MyApp extends StatelessWidget {
     );
 
     return MaterialApp(
-        title: 'Flutter Study',
+        localizationsDelegates: const [
+          S.delegate,
+          GlobalMaterialLocalizations.delegate,
+          GlobalWidgetsLocalizations.delegate
+        ],
+        supportedLocales: S.delegate.supportedLocales,
+        // 如果需要强制使用某种语言可以添加如下代码
+        localeResolutionCallback:
+            S.delegate.resolution(fallback: Locale("zh", "CN")),
+//        title: S.of(context).flutter_study,
+        title: "Flutter Study",
         theme: ThemeData(
           primarySwatch: Colors.lightBlue,
         ),

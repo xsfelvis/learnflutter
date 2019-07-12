@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:learnflutter/demo6/notification/mynotification.dart';
+import 'package:learnflutter/msgdispatch/notification/mynotification.dart';
 
 class NotificationStudy extends StatefulWidget {
   @override
