@@ -1,9 +1,9 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:learnflutter/demo3/view/DiscoveryPage.dart';
-import 'package:learnflutter/demo3/view/MyInfoPage.dart';
-import 'package:learnflutter/demo3/view/NewsListPage.dart';
-import 'package:learnflutter/demo3/view/SystemPage.dart';
+import 'package:learnflutter/dio/view/DiscoveryPage.dart';
+import 'package:learnflutter/dio/view/MyInfoPage.dart';
+import 'package:learnflutter/dio/view/NewsListPage.dart';
+import 'package:learnflutter/dio/view/SystemPage.dart';
 import 'package:learnflutter/drawer_page.dart';
 import 'package:learnflutter/router/route_study.dart';
 

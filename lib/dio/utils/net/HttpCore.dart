@@ -2,8 +2,8 @@
 import 'dart:convert';
 
 import 'package:dio/dio.dart';
-import 'package:learnflutter/demo3/utils/net/Api.dart';
-import 'package:learnflutter/demo3/DebugConfig.dart';
+import 'package:learnflutter/dio/utils/net/Api.dart';
+import 'package:learnflutter/dio/DebugConfig.dart';
 
 class HttpCore {
   factory HttpCore() => _getInstance();

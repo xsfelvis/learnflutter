@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:learnflutter/demo2/utils/toast/ToastUtil.dart';
-import 'package:learnflutter/demo3/model/Banners.dart';
+import 'package:learnflutter/dio/model/Banners.dart';
 
 class WidgetsUtils {
   // 屏幕宽度

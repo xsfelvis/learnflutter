@@ -1,7 +1,7 @@
-import 'package:learnflutter/demo3/model/Banners.dart';
-import 'package:learnflutter/demo3/utils/net/HttpCore.dart';
-import 'package:learnflutter/demo3/utils/net/Api.dart';
-import 'package:learnflutter/demo3/utils/toast/ToastUtil.dart';
+import 'package:learnflutter/dio/model/Banners.dart';
+import 'package:learnflutter/dio/utils/net/HttpCore.dart';
+import 'package:learnflutter/dio/utils/net/Api.dart';
+import 'package:learnflutter/dio/utils/toast/ToastUtil.dart';
 
 class HttpBiz {
   factory HttpBiz() => _getInstance();
