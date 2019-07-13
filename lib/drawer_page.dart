@@ -48,14 +48,14 @@ class _DrawerWeigetState extends State<DrawerWeiget> {
               Navigator.pushNamed(context, '/MsgPatchMsgPage');
             }),
         new Divider(),
-//        new ListTile(
-//          title: new Text('复杂UI'),
-//          trailing: new Icon(Icons.arrow_right),
-//          onTap: (){
-//            Navigator.of(context).pop();
-//            Navigator.pushNamed(context, routeName)
-//          },
-//        )
+        new ListTile(
+          title: new Text('Bloc'),
+          trailing: new Icon(Icons.arrow_right),
+          onTap: (){
+            Navigator.of(context).pop();
+            Navigator.pushNamed(context, '/bloc_first_page');
+          },
+        )
       ],
     );
   }

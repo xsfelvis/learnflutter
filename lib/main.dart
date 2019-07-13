@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:learnflutter/bloc/bloc_provider.dart';
+import 'package:learnflutter/bloc/first_page.dart';
 import 'package:learnflutter/dio/dio_parse_net.dart';
 import 'package:learnflutter/router/route_study.dart';
 import 'package:learnflutter/router/static_router.dart';
@@ -45,31 +47,36 @@ class MyApp extends StatelessWidget {
       ),
     );
 
-    return MaterialApp(
-        localizationsDelegates: const [
-          S.delegate,
-          GlobalMaterialLocalizations.delegate,
-          GlobalWidgetsLocalizations.delegate
-        ],
-        supportedLocales: S.delegate.supportedLocales,
-        // 如果需要强制使用某种语言可以添加如下代码
-        localeResolutionCallback:
+    return
+      new BlocProvider(
+        child:MaterialApp(
+            localizationsDelegates: const [
+              S.delegate,
+              GlobalMaterialLocalizations.delegate,
+              GlobalWidgetsLocalizations.delegate
+            ],
+            supportedLocales: S.delegate.supportedLocales,
+            // 如果需要强制使用某种语言可以添加如下代码
+            localeResolutionCallback:
             S.delegate.resolution(fallback: Locale("zh", "CN")),
 //        title: S.of(context).flutter_study,
-        title: "Flutter Study",
-        theme: ThemeData(
-          primarySwatch: Colors.lightBlue,
-        ),
-        home: new DefaultTabController(length: 4, child: scaffold),
-        routes: <String, WidgetBuilder>{
-          '/RoutePage': (BuildContext context) => new RouterStudy(),
-          "RoutePage/Static_Route_Page": (context) => StaticRoute(),
-          '/DioStudyPage': (BuildContext context) => new DioStudy(),
-          '/MsgPatchMsgPage': (BuildContext context) => new MsgDispatchMsg(),
-          'MsgPatchMsgPage/NotificationDisPatchMsgPage':
-              (BuildContext context) => new NotificationMsgDispatchMsg(),
-          'MsgPatchMsgPage/InhritedWidgetDisPatchMsgPage':
-              (BuildContext context) => new InheritedWidgetTestContainer(),
-        });
+            title: "Flutter Study",
+            theme: ThemeData(
+              primarySwatch: Colors.lightBlue,
+            ),
+            home: new DefaultTabController(length: 4, child: scaffold),
+            routes: <String, WidgetBuilder>{
+              '/RoutePage': (BuildContext context) => new RouterStudy(),
+              "RoutePage/Static_Route_Page": (context) => StaticRoute(),
+              '/DioStudyPage': (BuildContext context) => new DioStudy(),
+              '/MsgPatchMsgPage': (BuildContext context) => new MsgDispatchMsg(),
+              'MsgPatchMsgPage/NotificationDisPatchMsgPage':
+                  (BuildContext context) => new NotificationMsgDispatchMsg(),
+              'MsgPatchMsgPage/InhritedWidgetDisPatchMsgPage':
+                  (BuildContext context) => new InheritedWidgetTestContainer(),
+              '/bloc_first_page': (BuildContext context) => new FirstPage()
+            })
+      );
+
   }
 }
