@@ -1,4 +1,5 @@
 import 'dart:async';
+import 'package:rxdart/rxdart.dart';
 
 class CountBloc {
   int _count;
@@ -6,7 +7,9 @@ class CountBloc {
 
   CountBloc() {
     _count = 0;
-    _countController = StreamController<int>.broadcast();
+//    _countController = StreamController<int>.broadcast();
+    //BehaviorSubject可以记录下最新一次的事件
+    _countController = BehaviorSubject<int>();
   }
 
   Stream<int> get value => _countController.stream;
