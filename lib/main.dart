@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:learnflutter/bloc/bloc_provider.dart';
 import 'package:learnflutter/bloc/first_page.dart';
 import 'package:learnflutter/dio/dio_parse_net.dart';
+import 'package:learnflutter/overlay/learnoverlay.dart';
 import 'package:learnflutter/router/route_study.dart';
 import 'package:learnflutter/router/static_router.dart';
 import 'package:learnflutter/msgdispatch/inheritedwidget/inhritagecontainer.dart';
@@ -10,6 +11,7 @@ import 'package:learnflutter/msgdispatch/notification/notification_msg_dispatch.
 import 'package:learnflutter/homepage/homepageres.dart';
 import 'generated/i18n.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
+import 'local_const.dart';
 
 import 'homepage/layout_test.dart';
 
@@ -47,9 +49,8 @@ class MyApp extends StatelessWidget {
       ),
     );
 
-    return
-      new BlocProvider(
-        child:MaterialApp(
+    return new BlocProvider(
+        child: MaterialApp(
             localizationsDelegates: const [
               S.delegate,
               GlobalMaterialLocalizations.delegate,
@@ -58,7 +59,7 @@ class MyApp extends StatelessWidget {
             supportedLocales: S.delegate.supportedLocales,
             // 如果需要强制使用某种语言可以添加如下代码
             localeResolutionCallback:
-            S.delegate.resolution(fallback: Locale("zh", "CN")),
+                S.delegate.resolution(fallback: Locale("zh", "CN")),
 //        title: S.of(context).flutter_study,
             title: "Flutter Study",
             theme: ThemeData(
@@ -66,17 +67,20 @@ class MyApp extends StatelessWidget {
             ),
             home: new DefaultTabController(length: 4, child: scaffold),
             routes: <String, WidgetBuilder>{
-              '/RoutePage': (BuildContext context) => new RouterStudy(),
-              "RoutePage/Static_Route_Page": (context) => StaticRoute(),
-              '/DioStudyPage': (BuildContext context) => new DioStudy(),
-              '/MsgPatchMsgPage': (BuildContext context) => new MsgDispatchMsg(),
-              'MsgPatchMsgPage/NotificationDisPatchMsgPage':
-                  (BuildContext context) => new NotificationMsgDispatchMsg(),
-              'MsgPatchMsgPage/InhritedWidgetDisPatchMsgPage':
-                  (BuildContext context) => new InheritedWidgetTestContainer(),
-              '/bloc_first_page': (BuildContext context) => new FirstPage()
-            })
-      );
-
+              local_const.ROUTE_PAGE: (BuildContext context) =>
+                  new RouterStudy(),
+              local_const.STATIC_ROUTE_PAGE: (context) => StaticRoute(),
+              local_const.DIO_PAGE: (BuildContext context) => new DioStudy(),
+              local_const.MSG_DISPATCH_PAGE: (BuildContext context) =>
+                  new MsgDispatchMsg(),
+              local_const.NOTIFICATION_DISPATCH_PAGE: (BuildContext context) =>
+                  new NotificationMsgDispatchMsg(),
+              local_const.INHRITED_DISPATCH_PAGE: (BuildContext context) =>
+                  new InheritedWidgetTestContainer(),
+              local_const.BLOC_FIRST_PAGE: (BuildContext context) =>
+                  new FirstPage(),
+              local_const.LEARN_OVERLAY: (BuildContext context) =>
+                  new LearnOverlay()
+            }));
   }
 }

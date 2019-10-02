@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'local_const.dart';
 
 class DrawerWeiget extends StatefulWidget {
   @override
@@ -22,14 +23,13 @@ class _DrawerWeigetState extends State<DrawerWeiget> {
 //            backgroundImage: new NetworkImage(
 //                'https://github.com/account'),
           ),
-
         ),
         new ListTile(
             title: new Text('路由'),
             trailing: new Icon(Icons.arrow_right),
             onTap: () {
               Navigator.of(context).pop();
-              Navigator.pushNamed(context, '/RoutePage');
+              Navigator.pushNamed(context, local_const.ROUTE_PAGE);
             }),
         new Divider(),
         new ListTile(
@@ -37,7 +37,7 @@ class _DrawerWeigetState extends State<DrawerWeiget> {
             trailing: new Icon(Icons.arrow_right),
             onTap: () {
               Navigator.of(context).pop();
-              Navigator.pushNamed(context, '/DioStudyPage');
+              Navigator.pushNamed(context, local_const.DIO_PAGE);
             }),
         new Divider(),
         new ListTile(
@@ -45,15 +45,24 @@ class _DrawerWeigetState extends State<DrawerWeiget> {
             trailing: new Icon(Icons.arrow_right),
             onTap: () {
               Navigator.of(context).pop();
-              Navigator.pushNamed(context, '/MsgPatchMsgPage');
+              Navigator.pushNamed(context, local_const.MSG_DISPATCH_PAGE);
             }),
         new Divider(),
         new ListTile(
           title: new Text('Bloc'),
           trailing: new Icon(Icons.arrow_right),
-          onTap: (){
+          onTap: () {
             Navigator.of(context).pop();
-            Navigator.pushNamed(context, '/bloc_first_page');
+            Navigator.pushNamed(context, local_const.BLOC_FIRST_PAGE);
+          },
+        ),
+        new Divider(),
+        new ListTile(
+          title: new Text('overlay'),
+          trailing: new Icon(Icons.arrow_right),
+          onTap: () {
+            Navigator.of(context).pop();
+            Navigator.pushNamed(context, local_const.LEARN_OVERLAY);
           },
         )
       ],
