@@ -64,6 +64,15 @@ class _DrawerWeigetState extends State<DrawerWeiget> {
             Navigator.of(context).pop();
             Navigator.pushNamed(context, local_const.LEARN_OVERLAY);
           },
+        ),
+        new Divider(),
+        new ListTile(
+          title: new Text('keys'),
+          trailing: new Icon(Icons.arrow_right),
+          onTap: () {
+            Navigator.of(context).pop();
+            Navigator.pushNamed(context, local_const.LEARN_KEYS_ENTRANCE);
+          },
         )
       ],
     );

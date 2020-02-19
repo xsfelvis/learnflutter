@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/scheduler.dart';
 import 'package:learnflutter/msgdispatch/inheritedwidget/dataInhritate.dart';
 import 'package:learnflutter/msgdispatch/inheritedwidget/datamodel.dart';
 import 'package:learnflutter/msgdispatch/inheritedwidget/funcationwidgets.dart';
@@ -22,6 +23,7 @@ class _InheritedWidgetTestContainerState
   void initState() {
     _initData();
     super.initState();
+    SchedulerBinding.instance.addPostFrameCallback((_) => {});
   }
 
   _incrementCount() {

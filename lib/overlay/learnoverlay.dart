@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/widgets.dart';
 
 //void main() => runApp(new MyApp());
 
@@ -38,6 +39,7 @@ class _MyHomePageState extends State<MyHomePage> {
   LayerLink layerLink = new LayerLink();
 
   OverlayEntry weixinOverlayEntry;
+  final GlobalKey globalKeyButtonOne = GlobalKey();
 
   @override
   void initState() {
@@ -95,12 +97,8 @@ class _MyHomePageState extends State<MyHomePage> {
           ),
           body: new Container(
               child: new Column(
+                mainAxisAlignment: MainAxisAlignment.center,
             children: <Widget>[
-              new RaisedButton(
-                  onPressed: () {
-                    Toast.show(context: context, message: "显示对话框");
-                  },
-                  child: new Text("点击显示overlay")),
               new CompositedTransformTarget(
                 link: layerLink,
                 child: new TextFormField(
@@ -110,6 +108,14 @@ class _MyHomePageState extends State<MyHomePage> {
                   focusNode: focusNode,
                 ),
               ),
+              new Center(
+                key: globalKeyButtonOne,
+                child: new RaisedButton(
+                    onPressed: () {
+                      Toast.show(context: context, message: "显示对话框");
+                    },
+                    child: new Text("点击显示overlay")),
+              )
             ],
           )),
 //          floatingActionButton: new FabWithIcons(
@@ -227,7 +233,7 @@ class _MyHomePageState extends State<MyHomePage> {
  * 利用overlay实现Toast
  */
 class Toast {
-  static void show({@required BuildContext context, @required String message}) {
+  static void show({@required BuildContext context, @required String message,GlobalKey}) {
     //创建一个OverlayEntry对象
     OverlayEntry overlayEntry = new OverlayEntry(builder: (context) {
       return new Positioned(

@@ -2,8 +2,19 @@ import 'dart:async';
 
 main() {
 //  testFuture();
-  test2();
+//  test2();
+  testInt2String();
 }
+
+void testInt2String() {
+  int index = 1;
+  print("this is a int2string" + index.toString());
+}
+
+//void testInt2String(int Str) {
+//  int index = 1;
+//  print("this is a int2string" + index.toString());
+//}
 
 Future test2() async {
   methodA();

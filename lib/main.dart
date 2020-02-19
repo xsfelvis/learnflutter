@@ -2,6 +2,9 @@ import 'package:flutter/material.dart';
 import 'package:learnflutter/bloc/bloc_provider.dart';
 import 'package:learnflutter/bloc/first_page.dart';
 import 'package:learnflutter/dio/dio_parse_net.dart';
+import 'package:learnflutter/keys/statefull_not_work.dart';
+import 'package:learnflutter/keys/statefull_random.dart';
+import 'package:learnflutter/keys/stateless_work.dart';
 import 'package:learnflutter/overlay/learnoverlay.dart';
 import 'package:learnflutter/router/route_study.dart';
 import 'package:learnflutter/router/static_router.dart';
@@ -11,6 +14,8 @@ import 'package:learnflutter/msgdispatch/notification/notification_msg_dispatch.
 import 'package:learnflutter/homepage/homepageres.dart';
 import 'generated/i18n.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
+import 'keys/keys_entrance.dart';
+import 'keys/statefull_work.dart';
 import 'local_const.dart';
 
 import 'homepage/layout_test.dart';
@@ -80,7 +85,17 @@ class MyApp extends StatelessWidget {
               local_const.BLOC_FIRST_PAGE: (BuildContext context) =>
                   new FirstPage(),
               local_const.LEARN_OVERLAY: (BuildContext context) =>
-                  new LearnOverlay()
+                  new LearnOverlay(),
+              local_const.LEARN_KEYS_ENTRANCE: (BuildContext context) =>
+                  new KeysEntrance(),
+              local_const.LEARN_KEYS_STATELESS_OK: (BuildContext context) =>
+                  new PositionedTiles(),
+              local_const.LEARN_KEYS_STATEFULL_NOT_OK: (BuildContext context) =>
+                  new PositionedTilesNotWrok(),
+              local_const.LEARN_KEYS_STATEFULL_OK: (BuildContext context) =>
+                  new PositionedTilesStateFullWrok(),
+              local_const.LEARN_KEYS_STATEFULL_RANDOM: (BuildContext context) =>
+              new PositionedTilesStateFullRandom(),
             }));
   }
 }
