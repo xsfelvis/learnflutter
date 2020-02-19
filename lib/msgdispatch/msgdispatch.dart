@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:learnflutter/local_const.dart';
 
 class MsgDispatchMsg extends StatelessWidget {
   @override
@@ -8,7 +9,7 @@ class MsgDispatchMsg extends StatelessWidget {
         title: new Text('Msg DisPatch'),
         centerTitle: true,
       ),
-      body:new ListView(
+      body: new ListView(
         children: <Widget>[
           new Padding(
             padding: const EdgeInsets.only(left: 10.0, top: 10.0, right: 10.0),
@@ -16,7 +17,8 @@ class MsgDispatchMsg extends StatelessWidget {
                 textColor: Colors.black,
                 child: new Text('InheritedWidget从上往下传递数据'),
                 onPressed: () {
-                  Navigator.pushNamed(context, "MsgPatchMsgPage/InhritedWidgetDisPatchMsgPage");
+                  Navigator.pushNamed(
+                      context, LocalConst.INHRITED_DISPATCH_PAGE);
                 }),
           ),
           new Padding(
@@ -25,10 +27,10 @@ class MsgDispatchMsg extends StatelessWidget {
                 textColor: Colors.black,
                 child: new Text('Notification从下往上数据传递'),
                 onPressed: () {
-                  Navigator.pushNamed(context, "MsgPatchMsgPage/NotificationDisPatchMsgPage");
+                  Navigator.pushNamed(
+                      context, LocalConst.NOTIFICATION_DISPATCH_PAGE);
                 }),
           ),
-
           new Padding(
             padding: const EdgeInsets.only(left: 10.0, top: 10.0, right: 10.0),
             child: new RaisedButton(
@@ -39,7 +41,7 @@ class MsgDispatchMsg extends StatelessWidget {
                 }),
           ),
         ],
-      ) ,
+      ),
     );
   }
 }

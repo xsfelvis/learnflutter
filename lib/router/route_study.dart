@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:learnflutter/local_const.dart';
 import 'package:learnflutter/router/dynamic_router.dart';
-import 'package:learnflutter/router/static_router.dart';
+import 'dart:async';
 
 class RouterStudy extends StatelessWidget {
   @override
@@ -52,7 +53,7 @@ class _MyHomePageState extends State<MyHomePage> {
               child: Text("open static router"),
               textColor: Colors.blue,
               onPressed: () {
-                Navigator.pushNamed(context, "RoutePage/Static_Route_Page");
+                Navigator.pushNamed(context, LocalConst.STATIC_ROUTE_PAGE);
 //                Navigator.of(context).pushNamed("router/static_page");
               },
             ),

@@ -72,29 +72,29 @@ class MyApp extends StatelessWidget {
             ),
             home: new DefaultTabController(length: 4, child: scaffold),
             routes: <String, WidgetBuilder>{
-              local_const.ROUTE_PAGE: (BuildContext context) =>
+              LocalConst.ROUTE_PAGE: (BuildContext context) =>
                   new RouterStudy(),
-              local_const.STATIC_ROUTE_PAGE: (context) => StaticRoute(),
-              local_const.DIO_PAGE: (BuildContext context) => new DioStudy(),
-              local_const.MSG_DISPATCH_PAGE: (BuildContext context) =>
+              LocalConst.STATIC_ROUTE_PAGE: (context) => StaticRoute(),
+              LocalConst.DIO_PAGE: (BuildContext context) => new DioStudy(),
+              LocalConst.MSG_DISPATCH_PAGE: (BuildContext context) =>
                   new MsgDispatchMsg(),
-              local_const.NOTIFICATION_DISPATCH_PAGE: (BuildContext context) =>
+              LocalConst.NOTIFICATION_DISPATCH_PAGE: (BuildContext context) =>
                   new NotificationMsgDispatchMsg(),
-              local_const.INHRITED_DISPATCH_PAGE: (BuildContext context) =>
+              LocalConst.INHRITED_DISPATCH_PAGE: (BuildContext context) =>
                   new InheritedWidgetTestContainer(),
-              local_const.BLOC_FIRST_PAGE: (BuildContext context) =>
+              LocalConst.BLOC_FIRST_PAGE: (BuildContext context) =>
                   new FirstPage(),
-              local_const.LEARN_OVERLAY: (BuildContext context) =>
+              LocalConst.LEARN_OVERLAY: (BuildContext context) =>
                   new LearnOverlay(),
-              local_const.LEARN_KEYS_ENTRANCE: (BuildContext context) =>
+              LocalConst.LEARN_KEYS_ENTRANCE: (BuildContext context) =>
                   new KeysEntrance(),
-              local_const.LEARN_KEYS_STATELESS_OK: (BuildContext context) =>
+              LocalConst.LEARN_KEYS_STATELESS_OK: (BuildContext context) =>
                   new PositionedTiles(),
-              local_const.LEARN_KEYS_STATEFULL_NOT_OK: (BuildContext context) =>
+              LocalConst.LEARN_KEYS_STATEFULL_NOT_OK: (BuildContext context) =>
                   new PositionedTilesNotWrok(),
-              local_const.LEARN_KEYS_STATEFULL_OK: (BuildContext context) =>
+              LocalConst.LEARN_KEYS_STATEFULL_OK: (BuildContext context) =>
                   new PositionedTilesStateFullWrok(),
-              local_const.LEARN_KEYS_STATEFULL_RANDOM: (BuildContext context) =>
+              LocalConst.LEARN_KEYS_STATEFULL_RANDOM: (BuildContext context) =>
               new PositionedTilesStateFullRandom(),
             }));
   }

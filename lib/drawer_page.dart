@@ -29,7 +29,7 @@ class _DrawerWeigetState extends State<DrawerWeiget> {
             trailing: new Icon(Icons.arrow_right),
             onTap: () {
               Navigator.of(context).pop();
-              Navigator.pushNamed(context, local_const.ROUTE_PAGE);
+              Navigator.pushNamed(context, LocalConst.ROUTE_PAGE);
             }),
         new Divider(),
         new ListTile(
@@ -37,7 +37,7 @@ class _DrawerWeigetState extends State<DrawerWeiget> {
             trailing: new Icon(Icons.arrow_right),
             onTap: () {
               Navigator.of(context).pop();
-              Navigator.pushNamed(context, local_const.DIO_PAGE);
+              Navigator.pushNamed(context, LocalConst.DIO_PAGE);
             }),
         new Divider(),
         new ListTile(
@@ -45,7 +45,7 @@ class _DrawerWeigetState extends State<DrawerWeiget> {
             trailing: new Icon(Icons.arrow_right),
             onTap: () {
               Navigator.of(context).pop();
-              Navigator.pushNamed(context, local_const.MSG_DISPATCH_PAGE);
+              Navigator.pushNamed(context, LocalConst.MSG_DISPATCH_PAGE);
             }),
         new Divider(),
         new ListTile(
@@ -53,7 +53,7 @@ class _DrawerWeigetState extends State<DrawerWeiget> {
           trailing: new Icon(Icons.arrow_right),
           onTap: () {
             Navigator.of(context).pop();
-            Navigator.pushNamed(context, local_const.BLOC_FIRST_PAGE);
+            Navigator.pushNamed(context, LocalConst.BLOC_FIRST_PAGE);
           },
         ),
         new Divider(),
@@ -62,7 +62,7 @@ class _DrawerWeigetState extends State<DrawerWeiget> {
           trailing: new Icon(Icons.arrow_right),
           onTap: () {
             Navigator.of(context).pop();
-            Navigator.pushNamed(context, local_const.LEARN_OVERLAY);
+            Navigator.pushNamed(context, LocalConst.LEARN_OVERLAY);
           },
         ),
         new Divider(),
@@ -71,7 +71,7 @@ class _DrawerWeigetState extends State<DrawerWeiget> {
           trailing: new Icon(Icons.arrow_right),
           onTap: () {
             Navigator.of(context).pop();
-            Navigator.pushNamed(context, local_const.LEARN_KEYS_ENTRANCE);
+            Navigator.pushNamed(context, LocalConst.LEARN_KEYS_ENTRANCE);
           },
         )
       ],

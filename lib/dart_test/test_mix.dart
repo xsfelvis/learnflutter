@@ -84,7 +84,7 @@ class D extends Base {
   }
 }
 
-class E = D with C, C1;
+//class E = D with C, C1;
 
 void main() {
   G t = new G();
@@ -96,9 +96,9 @@ void main() {
   g2.a();
   g2.b();
   g2.c();
-  print("=========");
-  E e = E();
-  e.a();
-  e.b();
-  e.c();
+//  print("=========");
+//  E e = E();
+//  e.a();
+//  e.b();
+//  e.c();
 }
