@@ -3,8 +3,6 @@ import 'package:learnflutter/bloc/bloc_provider.dart';
 import 'package:learnflutter/bloc/second_page.dart';
 
 class FirstPage extends StatelessWidget {
-  
-
   @override
   Widget build(BuildContext context) {
     final bloc = BlocProvider.of(context);
@@ -15,6 +13,7 @@ class FirstPage extends StatelessWidget {
       ),
       body: Center(
         child: StreamBuilder<int>(
+            // 监听Stream，每次值改变的时候，更新Text中的内容
             initialData: 0,
             stream: bloc.value,
             builder: (BuildContext context, AsyncSnapshot<int> snapshot) {

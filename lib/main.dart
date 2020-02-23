@@ -12,6 +12,7 @@ import 'package:learnflutter/msgdispatch/inheritedwidget/inhritagecontainer.dart
 import 'package:learnflutter/msgdispatch/msgdispatch.dart';
 import 'package:learnflutter/msgdispatch/notification/notification_msg_dispatch.dart';
 import 'package:learnflutter/homepage/homepageres.dart';
+import 'package:learnflutter/statemanager/learn_state.dart';
 import 'package:learnflutter/widget/learn_slider.dart';
 import 'generated/i18n.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
@@ -97,8 +98,10 @@ class MyApp extends StatelessWidget {
                   new PositionedTilesStateFullWrok(),
               LocalConst.LEARN_KEYS_STATEFULL_RANDOM: (BuildContext context) =>
                   new PositionedTilesStateFullRandom(),
-              LocalConst.LEARN_KEYS_WIDGET_SLIDER: (BuildContext context) =>
+              LocalConst.LEARN_WIDGET_SLIDER: (BuildContext context) =>
                   new SliderDemo(),
+              LocalConst.LEARN_STATE_MANAGER_ENTRANCE: (BuildContext context) =>
+                  new LearnStateManager(),
             }));
   }
 }

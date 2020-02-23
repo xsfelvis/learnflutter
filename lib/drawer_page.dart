@@ -80,7 +80,7 @@ class _DrawerWeigetState extends State<DrawerWeiget> {
           trailing: new Icon(Icons.arrow_right),
           onTap: () {
             Navigator.of(context).pop();
-            Navigator.pushNamed(context, LocalConst.LEARN_KEYS_WIDGET_SLIDER);
+            Navigator.pushNamed(context, LocalConst.LEARN_WIDGET_SLIDER);
           },
         )
       ],

@@ -5,7 +5,6 @@ import 'countbloc.dart';
 class BlocProvider extends InheritedWidget {
   CountBloc bloc = CountBloc();
   BlocProvider({Key key, Widget child}) : super(key: key, child: child);
-
 //  @override
 //  bool updateShouldNotify(InheritedWidget oldWidget) {
 //    return true;
