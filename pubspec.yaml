@@ -30,6 +30,9 @@ dependencies:
     sdk: flutter
 
   bloc: ^3.0.0
+  provider: ^4.0.1
+
+
 
 
 
@@ -45,7 +48,6 @@ dev_dependencies:
   build_runner: ^1.1.2
   json_serializable: ^2.0.0
   rxdart: ^0.23.0
-  provider: ^3.0.0+1
 
 
 # For information on the generic Dart part of this file, see the

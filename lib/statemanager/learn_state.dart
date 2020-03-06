@@ -45,6 +45,16 @@ class LearnStateManager extends StatelessWidget {
             padding: const EdgeInsets.only(left: 10.0, top: 10.0, right: 10.0),
             child: new RaisedButton(
                 textColor: Colors.black,
+                child: new Text('Simple Provider'),
+                onPressed: () {
+                  Navigator.pushNamed(
+                      context, LocalConst.LEARN_STATE_SIMPLE_PROVIDER);
+                }),
+          ),
+          new Padding(
+            padding: const EdgeInsets.only(left: 10.0, top: 10.0, right: 10.0),
+            child: new RaisedButton(
+                textColor: Colors.black,
                 child: new Text('Wait ……'),
                 onPressed: () {
 //                  Navigator.pushNamed(context, "/GlobalKeyFromPage");

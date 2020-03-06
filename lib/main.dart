@@ -13,6 +13,7 @@ import 'package:learnflutter/msgdispatch/msgdispatch.dart';
 import 'package:learnflutter/msgdispatch/notification/notification_msg_dispatch.dart';
 import 'package:learnflutter/homepage/homepageres.dart';
 import 'package:learnflutter/statemanager/learn_state.dart';
+import 'package:learnflutter/statemanager/provider_simple.dart';
 import 'package:learnflutter/statemanager/stream_simple.dart';
 import 'package:learnflutter/widget/learn_slider.dart';
 import 'generated/i18n.dart';
@@ -105,6 +106,8 @@ class MyApp extends StatelessWidget {
                   new LearnStateManager(),
               LocalConst.LEARN_STATE_MANAGER_STREAM_SIMPLE:
                   (BuildContext context) => new StreamSimpleCounterPage(),
+              LocalConst.LEARN_STATE_SIMPLE_PROVIDER:
+                  (BuildContext context) => new SimpleProvider(),
             }));
   }
 }
