@@ -82,6 +82,16 @@ class _DrawerWeigetState extends State<DrawerWeiget> {
             Navigator.of(context).pop();
             Navigator.pushNamed(context, LocalConst.LEARN_WIDGET_SLIDER);
           },
+        ),
+        new Divider(),
+        new ListTile(
+          title: new Text('state'),
+          trailing: new Icon(Icons.arrow_right),
+          onTap: () {
+            Navigator.of(context).pop();
+            Navigator.pushNamed(
+                context, LocalConst.LEARN_STATE_MANAGER_ENTRANCE);
+          },
         )
       ],
     );

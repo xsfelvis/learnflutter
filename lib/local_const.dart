@@ -21,5 +21,6 @@ class LocalConst {
   static const LEARN_WIDGET_SLIDER = '/widget/slider';
 
   static const LEARN_STATE_MANAGER_ENTRANCE = '/state_manager/entrance';
-
+  static const LEARN_STATE_MANAGER_STREAM_SIMPLE =
+      '/state_manager/stream_simple';
 }
