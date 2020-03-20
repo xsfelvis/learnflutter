@@ -1,7 +1,20 @@
 void main() {
-  _printHello("hello", age: 10, address: "beijing");
-  _printString("xsf", "shanghai");
+//  _printHello("hello", age: 10, address: "beijing");
+//  _printString("xsf", "shanghai");
+  testCall.call(3);
+  testCall(3);
+
+  List<int> numbers = [3, 1, 2, 7, 12, 2, 4];
+  print(numbers.reduce((prev, curr) {//闭包简写形式
+    return prev + curr;
+  }));
+  print(numbers.reduce((prev, curr) => prev + curr)); //等价于上述形式，箭头函数简写形式
+
 }
+
+//test call
+void testCall(int x) => print(x);
+//
 
 //可选参数
 
