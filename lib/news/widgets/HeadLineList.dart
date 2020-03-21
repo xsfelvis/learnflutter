@@ -1,7 +1,6 @@
 import 'dart:async';
 
 import 'package:flutter/material.dart';
-import 'package:flutter_webview_plugin/flutter_webview_plugin.dart';
 import 'package:learnflutter/news/model/News.dart';
 import 'package:learnflutter/news/widgets/LoadingFooter.dart';
 import 'package:learnflutter/news/request/NewsApi.dart';
@@ -29,7 +28,6 @@ class _HeadlineListState extends State<HeadLineList>
   double _lastOffset = 0.0;
   List<News> _articles;
 
-  final flutterWebviewPlugin = new FlutterWebviewPlugin();
 
   Completer<Null> _completer;
 
@@ -70,18 +68,7 @@ class _HeadlineListState extends State<HeadLineList>
                       state: _footStatus);
                 } else {
                   //构建正常的Item
-                  return NewsItem(
-                      onTap: () {
-                        Navigator.push(
-                            context,
-                            MaterialPageRoute(
-                                builder: (context) => WebviewScaffold(
-                                      url: '${_articles[index].url}',
-                                      appBar:
-                                          AppBar(title: Text("新闻详情")),
-                                    )));
-                      },
-                      news: _articles[index]);
+                  return NewsItem();
                 }
               },
               controller: _controller,

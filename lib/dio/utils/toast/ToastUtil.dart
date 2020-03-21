@@ -1,3 +1,4 @@
+import 'package:flutter/material.dart';
 import 'package:fluttertoast/fluttertoast.dart';
 class ToastUtils{
   static showShort(String msg){
@@ -6,8 +7,8 @@ class ToastUtils{
         toastLength: Toast.LENGTH_LONG,
         gravity: ToastGravity.CENTER,
         timeInSecForIos: 1,
-        bgcolor: "#63CA6C",
-        textcolor: '#ffffff'
+        backgroundColor: Colors.blue,
+        textColor:Colors.red
     );
   }
 }

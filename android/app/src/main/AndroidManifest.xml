@@ -1,4 +1,5 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
     package="xsf.dev.learnflutter">
 
 
@@ -16,6 +17,8 @@
     <application
         android:name="io.flutter.app.FlutterApplication"
         android:label="learnflutter"
+        tools:replace="android:appComponentFactory"
+        android:appComponentFactory="android.support.v4.app.CoreComponentFactory"
         android:icon="@mipmap/ic_launcher">
         <activity
             android:name=".MainActivity"
