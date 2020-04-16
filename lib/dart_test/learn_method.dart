@@ -5,11 +5,14 @@ void main() {
   testCall(3);
 
   List<int> numbers = [3, 1, 2, 7, 12, 2, 4];
-  print(numbers.reduce((prev, curr) {//闭包简写形式
+  print(numbers.reduce((prev, curr) {
+    //闭包简写形式
     return prev + curr;
   }));
+  numbers.forEach((item) {
+    print(item);
+  });
   print(numbers.reduce((prev, curr) => prev + curr)); //等价于上述形式，箭头函数简写形式
-
 }
 
 //test call

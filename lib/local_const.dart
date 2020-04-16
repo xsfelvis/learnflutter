@@ -24,5 +24,6 @@ class LocalConst {
   static const LEARN_STATE_MANAGER_STREAM_SIMPLE =
       '/state_manager/stream_simple';
   static const LEARN_STATE_SIMPLE_PROVIDER = '/widget/provider';
+  static const LEARN_POSITION_SIMPLE = '/widget/position';
 
 }

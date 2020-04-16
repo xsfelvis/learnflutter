@@ -6,6 +6,7 @@ import 'package:learnflutter/keys/statefull_not_work.dart';
 import 'package:learnflutter/keys/statefull_random.dart';
 import 'package:learnflutter/keys/stateless_work.dart';
 import 'package:learnflutter/overlay/learnoverlay.dart';
+import 'package:learnflutter/overlay/position_sample.dart';
 import 'package:learnflutter/router/route_study.dart';
 import 'package:learnflutter/router/static_router.dart';
 import 'package:learnflutter/msgdispatch/inheritedwidget/inhritagecontainer.dart';
@@ -108,6 +109,9 @@ class MyApp extends StatelessWidget {
                   (BuildContext context) => new StreamSimpleCounterPage(),
               LocalConst.LEARN_STATE_SIMPLE_PROVIDER:
                   (BuildContext context) => new SimpleProvider(),
+              LocalConst.LEARN_POSITION_SIMPLE:
+                  (BuildContext context) => new MainSizeAndPosition(),
+
             }));
   }
 }

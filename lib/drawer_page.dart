@@ -67,6 +67,15 @@ class _DrawerWeigetState extends State<DrawerWeiget> {
         ),
         new Divider(),
         new ListTile(
+          title: new Text('size&position'),
+          trailing: new Icon(Icons.arrow_right),
+          onTap: () {
+            Navigator.of(context).pop();
+            Navigator.pushNamed(context, LocalConst.LEARN_POSITION_SIMPLE);
+          },
+        ),
+        new Divider(),
+        new ListTile(
           title: new Text('keys'),
           trailing: new Icon(Icons.arrow_right),
           onTap: () {
