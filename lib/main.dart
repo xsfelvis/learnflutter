@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:learnflutter/bloc/bloc_provider.dart';
 import 'package:learnflutter/bloc/first_page.dart';
 import 'package:learnflutter/dio/dio_parse_net.dart';
+import 'package:learnflutter/gesture.dart';
 import 'package:learnflutter/keys/statefull_not_work.dart';
 import 'package:learnflutter/keys/statefull_random.dart';
 import 'package:learnflutter/keys/stateless_work.dart';
@@ -111,7 +112,8 @@ class MyApp extends StatelessWidget {
                   (BuildContext context) => new SimpleProvider(),
               LocalConst.LEARN_POSITION_SIMPLE:
                   (BuildContext context) => new MainSizeAndPosition(),
-
+              LocalConst.LEARN_GESTURE:
+                  (BuildContext context) => new GestureTestWidget(),
             }));
   }
 }

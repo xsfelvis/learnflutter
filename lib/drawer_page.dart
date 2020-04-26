@@ -101,7 +101,18 @@ class _DrawerWeigetState extends State<DrawerWeiget> {
             Navigator.pushNamed(
                 context, LocalConst.LEARN_STATE_MANAGER_ENTRANCE);
           },
-        )
+        ),
+        new Divider(),
+        new ListTile(
+          title: new Text('gesture'),
+          trailing: new Icon(Icons.arrow_right),
+          onTap: () {
+            Navigator.of(context).pop();
+            Navigator.pushNamed(
+                context, LocalConst.LEARN_GESTURE);
+          },
+        ),
+
       ],
     );
   }
